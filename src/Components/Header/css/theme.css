@@ -2199,6 +2199,15 @@
     display: block;
     margin: 16px auto;
     text-align: center;
+  }.color{
+    background: rgba( 255, 255, 255, 0.3 );
+    
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    
+
+    
+    
   }
   
   .owl-carousel button.owl-dot {

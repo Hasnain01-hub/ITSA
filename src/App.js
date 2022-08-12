@@ -6,6 +6,12 @@ import Header from "./Components/Header/Header";
 import { Route, Switch } from "react-router-dom";
 import Login from "./Components/Header/Login/Signup/Login";
 import { auth, db } from "./Firebase";
+import Signup from "./Components/Header/Login/Signup/Signup.js";
+
+import Main from "./Components/Header/Home/Main";
+import Contactus from "./Components/Contact/Contactus";
+import About from "./Components/Header/Home/About";
+import Event from "./Components/Event/Event";
 function App() {
   const dispatch = useDispatch();
   var separatedString1;
@@ -51,7 +57,14 @@ function App() {
     <>
       <Header />
       <Switch>
+      <Route exact path="/" component={Main} />
+      <Route exact path="/contactus" component={Contactus} />
+      <Route exact path="/aboutus" component={About} />
+      <Route exact path="/events" component={Event} />
+      
         <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={Signup} />
+        
       </Switch>
     </>
   );

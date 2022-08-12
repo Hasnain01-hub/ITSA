@@ -32,7 +32,9 @@ a {
   .bt1:hover {
     box-shadow: 0 2px 8px 0 #fe6f5e, 0 6px 12px 0 #fe6f5e;
   }
-  
+  .bt1 {
+    font-size: 19px;
+  }
   @media only screen and (max-width: 414px) {
     .bt1 {
       height: 6.1vh;

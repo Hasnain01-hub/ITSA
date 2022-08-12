@@ -5,12 +5,12 @@ import React, { useState, useEffect } from "react";
 import "./css/theme.css";
 // import './css/maincons.css';
 import "./css/bootstrap.css";
-import { logout } from "../../Firebase";
+import { logout1 } from "../../Firebase";
 function Header() {
   let dispath = useDispatch();
   
   const logout = () => {
-    logout.signOut();
+    logout1();
     dispath({
       type: "LOGOUT_USER",
       payload: null,
@@ -33,7 +33,7 @@ function Header() {
   return (
     <>
       <header data-testid="header">
-        <nav className="navbar navbar-expand-lg navbar-light navbar-float">
+        <nav className="navbar navbar-expand-lg navbar-light color navbar-float">
           <div className="container">
             <a href="/" className="navbar-brand">
               ITSA<span className="text-primary"> VIT</span>
@@ -61,8 +61,8 @@ function Header() {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="/allservice" className="nav-link">
-                    Services
+                  <a href="/events" className="nav-link">
+                    Events
                   </a>
                 </li>
                 <li className="nav-item">
@@ -78,15 +78,19 @@ function Header() {
                       Login
                     </a>
                   ) : (
-                    <li class="nav-item active dropdown">
-                    
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <>
+                     <li class="nav-item active dropdown list-unstyled">
+                  <li class="nav-link dropdown-toggle btn btn-outline rounded-pill" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {user.email && user.email.split('@')[0]}
                   </li>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                    {user.role === 'admin' && <div><Link to="/admin/additems" className="dropdown-item">Dashboard</Link></div>}
                     <div><li class="dropdown-item" onClick={logout}>Logout</li></div>
-                    </div>
-                    </li>
+                  </div>
+                </li>
+                     </>
+                    
                   )}
                 </>
               </div>

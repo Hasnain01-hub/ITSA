@@ -2,7 +2,7 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from 'react';
-import { auth,db } from "../Firebase";
+import { auth,db } from "../../../../Firebase";
 import './login.css';
 import { Button } from 'antd';
 import { SendOutlined } from '@ant-design/icons';

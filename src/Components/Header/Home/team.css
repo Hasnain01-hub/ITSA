@@ -1,5 +1,8 @@
 .card-wrapper { 
-  height: 500px;
+flex-wrap: wrap;
+  height: 280px;
+  display: flex;
+  flex-direction: row;
   position: relative;
 }
 .head{
@@ -9,20 +12,22 @@
 .aboutimage{
     max-width: 100%;
 }
-.card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.topspace{
+
+  margin-top: 37.7vh;
+}
+.teamcard {
+    margin-left: 4vw;
   width: 350px;
   height: 450px;
-  transform: translate(-50%, -50%);
+  transform: translate(16%, -50%);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
   cursor: pointer;
   transition: 0.5s;
 }
-.card .card-image {
+.teamcard .card-imageteam {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -32,11 +37,11 @@
   background-color: #000;
   transition: 0.5s;
 }
-.card:hover img {
+.teamcard:hover img {
   opacity: 0.4;
   transition: 0.5s;
 }
-.card:hover .card-image {
+.teamcard:hover .card-imageteam {
   transform: translateY(-100px);
   transition: all 0.9s;
 }
@@ -68,7 +73,7 @@
   transform: translateY(200px);
   opacity: 0;
 }
-.card:hover .social-icons li a {
+.teamcard:hover .social-icons li a {
   transform: translateY(0px);
   opacity: 1;
 }
@@ -86,16 +91,16 @@
   transform: rotateY(360deg);
   color: #fff;
 }
-.card:hover li:nth-child(1) a {
+.teamcard:hover li:nth-child(1) a {
   transition-delay: 0.1s;
 }
-.card:hover li:nth-child(2) a {
+.teamcard:hover li:nth-child(2) a {
   transition-delay: 0.2s;
 }
-.card:hover li:nth-child(3) a {
+.teamcard:hover li:nth-child(3) a {
   transition-delay: 0.3s;
 }
-.card:hover li:nth-child(4) a {
+.teamcard:hover li:nth-child(4) a {
   transition-delay: 0.4s;
 }
 /**** Personal Details ****/
@@ -135,10 +140,10 @@
 .profile-two .social-icons li a {
   border-radius: 50%;
 }
-.card:hover .profile-img--two {
+.teamcard:hover .profile-img--two {
   transform: rotateY(180deg);
 }
-.card:hover .jane {
+.teamcard:hover .jane {
   bottom: 0;
   left: 0;
   transition-delay: 0.5s;
@@ -164,7 +169,19 @@
     }
 }
 @media (max-width: 576px) {
-    .head{
+  .card-wrapper{
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+  }  
+  .teamcard{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 31px;
+    transform: translate(0%, -50%);
+  }
+  .head{
         flex-direction: column;
         flex-wrap: wrap;
         position: relative;
@@ -175,4 +192,7 @@
       padding-right: 10px;
       width: 300px;
     }
+    .topspace {
+      margin-top: 26.7vh;
+  }
 }

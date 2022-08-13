@@ -14,6 +14,7 @@ import About from "./Components/Header/Home/About";
 import Event from "./Components/Event/Event";
 import Addevent from "./Components/Event/AddEvent/Addevent";
 import AdminRoute from "./Components/Header/Routes/Admin_routes";
+import RetriveContact from "./Components/Contact/Retrive contact/RetriveContact";
 function App() {
   const dispatch = useDispatch();
   var separatedString1;
@@ -60,6 +61,8 @@ function App() {
         <Route exact path="/aboutus" component={About} />
         <Route exact path="/events" component={Event} />
         <Route exact path="/addevents" component={Addevent} />
+        <Route exact path="/admin-contact" component={RetriveContact} />
+        {/* <AdminRoute exact path="/admin-contact" component={RetriveContact} /> */}
         {/* <AdminRoute exact path="/addevents" component={Addevent} /> */}
         
         <Route exact path="/login" component={Login} />

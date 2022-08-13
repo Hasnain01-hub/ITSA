@@ -1,6 +1,47 @@
-import React from 'react'
+import { useSelector } from "react-redux";
+import {React,useState} from "react";
+import { v4 as uuidv4 } from 'uuid';
+import { db } from "../../Firebase";
 import './contact.css'
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+const initialState = {
+  Name: '',
+  Contact: '',
+  message: '',
+};
 const Contactus = () => {
+  const { user } = useSelector((state) => ({ ...state }));
+  var id =uuidv4();
+    const [values, setValues] = useState(initialState);
+    const handleChange = (e) => {
+        setValues({ ...values, [e.target.name]: e.target.value });
+      };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if(user){
+        await db.collection("Contact").doc(id).set({
+            id : id,
+            email:user.email,
+            Name: values.Name,
+            Contact: values.Contact,
+            message: values.message,
+        })
+          .then((res) => {
+            console.log(res);
+            window.alert(`"${res.data.brands}" is created`);
+            window.location.reload();
+          })
+          .catch((err) => {
+            console.log(err);
+            alert("Event added")
+            window.location.reload();
+            // alert(err.response.data.err);
+          });
+        }else{
+            toast.error("Please login to contact us");
+        }
+      };
   return (
     <>
     <div class="background">
@@ -29,26 +70,27 @@ const Contactus = () => {
         <div class="screen-body-item">
           <div class="app-form">
             <div class="app-form-group">
-              <input class="app-form-control" placeholder="NAME" />
+              <input class="app-form-control" name="Name" onChange={handleChange} placeholder="NAME" />
             </div>
             {/* <div class="app-form-group">
               <input class="app-form-control" placeholder="EMAIL"/>
             </div> */}
             <div class="app-form-group">
-              <input class="app-form-control"  placeholder="CONTACT NO"/>
+              <input class="app-form-control" name="Contact" onChange={handleChange}  placeholder="CONTACT NO"/>
             </div>
             <div class="app-form-group message">
-              <input class="app-form-control" placeholder="MESSAGE"/>
+              <input class="app-form-control" name="message" onChange={handleChange} placeholder="MESSAGE"/>
             </div>
             <div class="app-form-group buttons">
               {/* <button class="app-form-button">CANCEL</button> */}
-              <button class="app-form-button">SEND</button>
+              <button class="app-form-button" onClick={handleSubmit}>SEND</button>
             </div>
           </div>
         </div>
       </div>
     </div>
 </div>
+<ToastContainer />
 </div>
 
     </>

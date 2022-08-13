@@ -66,6 +66,9 @@ function Header() {
                 <li className="nav-item">
                   <Link class="nav-link" to="/addevents">Add Events</Link>
                 </li>
+                <li className="nav-item">
+                  <Link class="nav-link" to="/admin-contact">Contact-Data</Link>
+                </li>
                 
               </ul>
               <div className="ml-auto">

@@ -1,8 +1,10 @@
 // import Lottie from "lottie-react";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 import {React,useState} from "react";
 import { db } from "../../../Firebase";
-import "./Addevent.css";
 import { v4 as uuidv4 } from 'uuid';
+import "./Addevent.css";
 const initialState = {
     event: '',
     date: '',
@@ -17,6 +19,7 @@ const Addevent = () => {
       };
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if(values.event!=='' && values.date!=='' && values.desc!=='' && values.images.length>0){
         await db.collection("events").doc(id).set({
             id : id,
             event: values.event,
@@ -31,10 +34,15 @@ const Addevent = () => {
           })
           .catch((err) => {
             console.log(err);
+            
             alert("Event added")
             window.location.reload();
             // alert(err.response.data.err);
           });
+        }
+        else{
+            toast.error("Please fill all the fields");
+        }
       };
   return (
     <>
@@ -68,6 +76,7 @@ const Addevent = () => {
 			<p>By signing up you are agreeing to our <a href="#">Terms and Conditions</a></p>
 		</div> */}
         </div>
+        <ToastContainer />
       </div>
     </>
   );

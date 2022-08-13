@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Route } from "react-router";
 import { useSelector } from "react-redux";
 
-import { db } from "../Firebase";
+
 import LoadingToRedirect from "./Loadingtoredirect";
+import { db } from "../../../Firebase";
 
 const AdminRoute = ({ children, ...rest }) => {
   const { user } = useSelector((state) => ({ ...state }));

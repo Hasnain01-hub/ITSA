@@ -1,8 +1,8 @@
 import React from 'react'
 import './home.css'
 import Lottie from "lottie-react";
-// import back from "../././../../Images/backgorund.gif";
 import backg from "../././../../Images/backg.json";
+// import back from "../././../../Images/backgorund.gif";
 const Home = () => {
     
     return (

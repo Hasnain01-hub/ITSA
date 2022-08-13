@@ -55,7 +55,7 @@ function Signup(){
         console.log(error);
       });
         dispatch({
-          type: "LOGGED_IN_USER2",
+          type: "LOGGED_USER",
           payload: {
             name: user.email.split("@")[0],
             email: user.email,

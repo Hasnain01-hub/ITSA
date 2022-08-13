@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
-import {React,useEffect,useState,useHistory} from 'react';
-import {useDispatch} from 'react-redux';
+import { React, useEffect, useState, useHistory } from "react";
+import { useDispatch } from "react-redux";
 import Header from "./Components/Header/Header";
 import { Route, Switch } from "react-router-dom";
 import Login from "./Components/Header/Login/Signup/Login";
@@ -12,6 +12,8 @@ import Main from "./Components/Header/Home/Main";
 import Contactus from "./Components/Contact/Contactus";
 import About from "./Components/Header/Home/About";
 import Event from "./Components/Event/Event";
+import Addevent from "./Components/Event/AddEvent/Addevent";
+import AdminRoute from "./Components/Header/Routes/Admin_routes";
 function App() {
   const dispatch = useDispatch();
   var separatedString1;
@@ -39,32 +41,29 @@ function App() {
                 role: separatedString1.role,
                 id: separatedString1.email,
               },
-
-            })
-          }).catch((error) => {
+            });
+          })
+          .catch((error) => {
             console.log(error);
           });
-
-
-
       }
     });
     return () => unsubscribe();
   }, [dispatch]);
 
   return (
-    
     <>
       <Header />
       <Switch>
-      <Route exact path="/" component={Main} />
-      <Route exact path="/contactus" component={Contactus} />
-      <Route exact path="/aboutus" component={About} />
-      <Route exact path="/events" component={Event} />
-      
+        <Route exact path="/" component={Main} />
+        <Route exact path="/contactus" component={Contactus} />
+        <Route exact path="/aboutus" component={About} />
+        <Route exact path="/events" component={Event} />
+        <Route exact path="/addevents" component={Addevent} />
+        {/* <AdminRoute exact path="/addevents" component={Addevent} /> */}
+        
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
-        
       </Switch>
     </>
   );

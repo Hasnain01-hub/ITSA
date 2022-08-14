@@ -34,7 +34,7 @@ const Contactus = () => {
           })
           .catch((err) => {
             console.log(err);
-            alert("Event added")
+            alert("Your message as been recorded")
             window.location.reload();
             // alert(err.response.data.err);
           });
@@ -65,7 +65,7 @@ const Contactus = () => {
             <span>CONTACT</span>
             <span>US</span>
           </div>
-          <div class="app-contact">CONTACT</div>
+          {/* <div class="app-contact">CONTACT</div> */}
         </div>
         <div class="screen-body-item">
           <div class="app-form">

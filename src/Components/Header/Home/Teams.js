@@ -27,9 +27,9 @@ const Teams = () => {
 
             <div class="details">
               <h2>
-                John Smith
+                Name
                 <br />
-                <span class="job-title">UI Developer</span>
+                <span class="job-title">Role</span>
               </h2>
             </div>
           </div>

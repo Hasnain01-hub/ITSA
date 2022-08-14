@@ -21,5 +21,4 @@ const RetriveContact = () => {
     </>
   )
 }
-
 export default RetriveContact

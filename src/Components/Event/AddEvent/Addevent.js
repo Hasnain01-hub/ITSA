@@ -1,3 +1,4 @@
+import { LoadingOutlined } from '@ant-design/icons';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { React, useState } from "react";
@@ -26,8 +27,8 @@ const Addevent = () => {
       values.event !== "" &&
       values.date !== "" &&
       values.desc !== "" 
-      // &&
-      // values.images.length > 0
+      &&
+      values.images.length > 0
     ) {
       await db
         .collection("events")
@@ -36,18 +37,18 @@ const Addevent = () => {
           id: id,
           event: values.event,
           date: values.date,
-          description: values.desc,
           image: values.images,
+          speaker: values.speaker,
+          venue: values.venue,
         })
         .then((res) => {
           console.log(res);
-          window.alert(`"${res.data.brands}" is created`);
+          alert(`"${values.event}" is added`);
           window.location.reload();
         })
         .catch((err) => {
           console.log(err);
-
-          alert("Event added");
+          // alert("Event added");
           window.location.reload();
           // alert(err.response.data.err);
         });
@@ -57,12 +58,14 @@ const Addevent = () => {
   };
   return (
     <>
+    
+    {/* {loading ? (<LoadingOutlined className="text-danger h1" />) : (<h4 className="heading">Events</h4>)} */}
       <div class="containerevent">
         <div class="cardevent">
           <div class="card-image">
             {/* <Lottie className="eventgif" animationData={backg}  loop={true} /> */}
           </div>
-          <form class="card-form">
+          <form class="card-form" onSubmit={handleSubmit}>
             <div class="input">
               <input
                 type="text"
@@ -115,7 +118,7 @@ const Addevent = () => {
               {/* <label class="input-label">Image</label> */}
             {/* </div> */}
             <div class="action">
-              <button class="action-button" onClick={handleSubmit}>
+              <button class="action-button" >
                 Submit
               </button>
             </div>

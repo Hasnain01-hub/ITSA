@@ -80,6 +80,7 @@ p:last-child {
   position: absolute;
   display: flex;
   align-items: center;
+  text-align: center;
   justify-content: center;
   top: -7px;
       left: -30px;
@@ -145,6 +146,7 @@ p:last-child {
       
       top: -7px;
       left: -30px;
+      text-align: center;
       width: 73px;
       height: 65px;
   }

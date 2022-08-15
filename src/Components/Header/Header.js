@@ -63,12 +63,16 @@ function Header() {
                 <li className="nav-item">
                   <Link class="nav-link" to="/contactus">Contact</Link>
                 </li>
-                <li className="nav-item">
+                {user && user.token ? (
+                  <>
+                {user.role=="admin"?<li className="nav-item">
                   <Link class="nav-link" to="/addevents">Add Events</Link>
-                </li>
-                <li className="nav-item">
+                </li>:console.log()}
+                {user.role=="admin"?<li className="nav-item">
                   <Link class="nav-link" to="/admin-contact">Contact-Data</Link>
-                </li>
+                </li>:console.log()}
+                </>
+                ) : console.log()}
                 
               </ul>
               <div className="ml-auto">
@@ -85,7 +89,7 @@ function Header() {
                   </li>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     
-                    {user.role === 'admin' && <div><Link to="/admin/additems" className="dropdown-item">Dashboard</Link></div>}
+                    {/* {user.role === 'admin' && <div><Link to="/admin/additems" className="dropdown-item">Dashboard</Link></div>} */}
                     <div><li class="dropdown-item" onClick={logout}>Logout</li></div>
                   </div>
                 </li>

@@ -96,6 +96,10 @@
     line-height: 8px;
   }
   .detail>p{
+    line-height: 23px;
+    text-align: left;
+    line-break: anywhere;
+    word-break: break-word;
     color: black;
     /* font-size: 27px; */
     font-weight: bold;

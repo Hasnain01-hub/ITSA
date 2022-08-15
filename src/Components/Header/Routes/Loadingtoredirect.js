@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import Lottie from "lottie-react";
+import Page from "../././../../Images/pagenot.json";
 import { useHistory } from 'react-router';
-
+import '../fotter.css';
 const LoadingToRedirect = () => {
     const [count, setCount] = useState(5);
     let history = useHistory()
@@ -15,8 +17,9 @@ const LoadingToRedirect = () => {
         return () => clearInterval(interval);
     }, [count, history])
     return (
-        <div className="container p-5 text-center">
+        <div className="container p-5 text-center topsp">
             <p>Redirecting you in {count} seconds</p>
+            <Lottie className="errorpage" animationData={Page}  loop={true} />
         </div>
     );
 };

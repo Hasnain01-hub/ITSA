@@ -7,7 +7,8 @@ const Teams = () => {
         <center>
           <h2>Our Convener</h2>
         </center>
-        <div class="topspace card-wrapper">
+        <br/>
+        <div class="topspace card-wrapper cuspace">
         
           <div class="teamcard">
             <div class="card-imageteam">

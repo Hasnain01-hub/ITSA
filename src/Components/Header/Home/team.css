@@ -195,6 +195,7 @@ flex-wrap: wrap;
         flex-direction: column;
         flex-wrap: wrap;
         position: relative;
+        margin-bottom: 15vh;
         top: 12vh;
     }
     .card{

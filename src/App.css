@@ -6,11 +6,20 @@
   height: 40vmin;
   pointer-events: none;
 }
+html{
+  overflow-x: hidden;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+.scrollable-element {
+  scrollbar-color: black white;
+}
+.scrollable-element {
+  scrollbar-width: none;
 }
 
 .App-header {

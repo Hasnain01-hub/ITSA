@@ -1,6 +1,5 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { React, useEffect, useState, useHistory } from "react";
+import { React, useEffect} from "react";
 import { useDispatch } from "react-redux";
 import Header from "./Components/Header/Header";
 import { Route, Switch } from "react-router-dom";
@@ -15,7 +14,6 @@ import Event from "./Components/Event/Event";
 import Addevent from "./Components/Event/AddEvent/Addevent";
 import AdminRoute from "./Components/Header/Routes/Admin_routes";
 import RetriveContact from "./Components/Contact/Retrive contact/RetriveContact";
-import { Footer } from "antd/lib/layout/layout";
 import Fotter from "./Components/Footer/Fotter";
 function App() {
   const dispatch = useDispatch();

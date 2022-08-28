@@ -1,0 +1,26 @@
+[class*="classic"]:before {
+  content: "Loading...";
+}
+.load{
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 2px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+.classic-3 {
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 30px;
+  padding: 0 5px 8px 0;
+  background: repeating-linear-gradient(90deg, currentColor 0 8%, #0000 0 10%)
+    200% 100%/200% 3px no-repeat;
+  animation: c3 4s steps(6) infinite;
+}
+@keyframes c3 {
+  to {
+    background-position: 80% 100%;
+  }
+}

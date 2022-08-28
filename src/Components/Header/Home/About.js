@@ -1,6 +1,7 @@
 import React from 'react'
 import Lottie from "lottie-react";
 import about from "../././../../Images/about.json";
+import './team.css';
 const About = () => {
   return (
     <>

@@ -24,3 +24,4 @@ const LoadingToRedirect = () => {
     );
 };
 export default LoadingToRedirect;
+src/Components/Header/Home/Main.js

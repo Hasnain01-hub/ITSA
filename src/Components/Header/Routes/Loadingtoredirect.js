@@ -23,5 +23,5 @@ const LoadingToRedirect = () => {
         </div>
     );
 };
+
 export default LoadingToRedirect;
-src/Components/Header/Home/Main.js

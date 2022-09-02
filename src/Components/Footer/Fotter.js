@@ -1,6 +1,7 @@
 import React  from "react";
 import { Link } from "react-router-dom";
 import './fotter.css';
+import './../Header/fotter.css'
 function Fotter() {
 return(
 <>

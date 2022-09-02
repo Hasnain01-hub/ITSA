@@ -15,8 +15,9 @@ import "./loader.css";
 // import Addevent from "./Components/Event/AddEvent/Addevent";
 // import AdminRoute from "./Components/Header/Routes/Admin_routes";
 // import RetriveContact from "./Components/Contact/Retrive contact/RetriveContact";
-// import Fotter from "./Components/Footer/Fotter";
-const Fotter = lazy(() => import("./Components/Footer/Fotter"));
+import Fotter from "./Components/Footer/Fotter";
+import Eventsdata from "./Components/Event/Eventsdata";
+// const Fotter = lazy(() => import("./Components/Footer/Fotter"));
 const AdminRoute = lazy(() => import("./Components/Header/Routes/Admin_routes"));
 const RetriveContact = lazy(() => import("./Components/Contact/Retrive contact/RetriveContact"));
 const Event = lazy(() => import("./Components/Event/Event"));
@@ -85,6 +86,7 @@ function App() {
         <Route exact path="/admin-contact" component={RetriveContact} /> */}
           <AdminRoute exact path="/admin-contact" component={RetriveContact} />
           <AdminRoute exact path="/addevents" component={Addevent} />
+          <AdminRoute exact path="/admin-events" component={Eventsdata} />
 
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />

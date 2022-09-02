@@ -56,6 +56,7 @@ const Addevent = () => {
       toast.error("Please fill all the fields");
     }
   };
+  
   return (
     <>
     
